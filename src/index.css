@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Cinzel Decorative', serif;
+    --font-spooky: 'Creepster', cursive;
+    --font-code: 'Fira Code', monospace;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    background-color: #080312;
+    color: #f1f0f7;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+}
+
+.font-spooky {
+  font-family: var(--font-spooky);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-code {
+  font-family: var(--font-code);
+}
+
+/* Custom Spooky Glows */
+.shadow-glow-purple {
+  box-shadow: 0 0 25px -5px rgba(168, 85, 247, 0.4), 0 0 10px -2px rgba(192, 132, 252, 0.3);
+}
+
+.shadow-glow-cyan {
+  box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.4), 0 0 10px -2px rgba(14, 165, 233, 0.3);
+}
+
+.shadow-glow-orange {
+  box-shadow: 0 0 25px -5px rgba(249, 115, 22, 0.45), 0 0 10px -2px rgba(251, 146, 60, 0.3);
+}
+
+.shadow-glow-green {
+  box-shadow: 0 0 25px -5px rgba(34, 197, 94, 0.4), 0 0 10px -2px rgba(74, 222, 128, 0.3);
+}
+
+/* Ghost in the Machine subtle CRT scanline effect */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 26, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Spooky floating animations */
+@keyframes ghost-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(-1.5deg);
+  }
+  75% {
+    transform: translateY(-14px) rotate(1.5deg);
+  }
+}
+
+@keyframes ghost-pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(192, 132, 252, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 26px rgba(168, 85, 247, 0.85));
+  }
+}
+
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.45;
+  }
+}
+
+.animate-ghost-float {
+  animation: ghost-float 4s ease-in-out infinite;
+}
+
+.animate-ghost-pulse {
+  animation: ghost-pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-flicker {
+  animation: flicker 6s infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0618;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b1968;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b21a8;
+}

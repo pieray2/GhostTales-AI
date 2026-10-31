@@ -1,0 +1,6 @@
+{
+  "name": "GhostTales AI",
+  "description": "Spooky AI story generator powered by Google's open-weight Gemma model, inspired by Halloween and Ghost in the Machine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
